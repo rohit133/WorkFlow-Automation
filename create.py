@@ -6,7 +6,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 
-directory = "E:\Projects-GitHub\My Projects"
+directory = "Your working directory" #Give your working Directory
 browser = webdriver.Chrome(executable_path=r"C:\Dev\chromedriver.exe")
 browser.get("https://github.com/login")
 
@@ -44,9 +44,7 @@ def create():
 #   remote access 
     hasCode = browser.find_element(By.XPATH,"//*[@id='empty-setup-push-repo-echo']/span[1]")
     print(hasCode.text)
-    p = subprocess.Popen("create.cmd", stdin = subprocess.PIPE)
-    time.sleep(2)
-
+ 
     browser.close()
 
 
