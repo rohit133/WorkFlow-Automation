@@ -1,5 +1,6 @@
 :create
     python create.py %1
+    set /P c
     cd My Projects/
     cd %1
     git init
@@ -7,7 +8,7 @@
     git add .
     git commit -m "Initial commit"
     git branch -M main
-    git remote add origin https://github.com/rohit133/%1.git
+    git remote add origin %c%%1.git
     git push -u origin main
     code .
-EXIT /B 0
+EXIT /B 0   

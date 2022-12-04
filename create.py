@@ -1,3 +1,4 @@
+import subprocess
 import sys
 import os
 import time 
@@ -43,8 +44,13 @@ def create():
 #   remote access 
     hasCode = browser.find_element(By.XPATH,"//*[@id='empty-setup-push-repo-echo']/span[1]")
     print(hasCode.text)
+    p = subprocess.Popen("create.cmd", stdin = subprocess.PIPE)
+    time.sleep(2)
 
     browser.close()
+
+
+    print("***** Work Flow Ready! *****")
 
 if __name__ == "__main__" :
     create()
